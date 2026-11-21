@@ -1,0 +1,26 @@
+using UnityEngine;
+
+public class GoldCoinHighlighterManager : MonoBehaviour
+{
+    public GameObject[] coins;
+    public int goldValue = 5;
+
+    void Start()
+    {
+        int goldCount = 0;
+
+        foreach (GameObject coinObj in coins)
+        {
+            CoinData data = coinObj.GetComponent<CoinData>();
+
+            if (data != null && data.value >= goldValue)
+            {
+                coinObj.GetComponent<Renderer>().material.color = Color.yellow;
+                Debug.Log("Золотая монета: " + coinObj.name + ", Стоимость: " + data.value);
+                goldCount++;
+            }
+        }
+
+        Debug.Log("Всего золотых монет: " + goldCount);
+    }
+}
