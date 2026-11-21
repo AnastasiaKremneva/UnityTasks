@@ -1,0 +1,28 @@
+using UnityEngine;
+
+public class LodManager : MonoBehaviour
+{
+    public GameObject[] lodLevels;
+
+    void Start()
+    {
+        int totalCost = 0;
+
+        foreach (GameObject obj in lodLevels)
+        {
+            string name = obj.name;
+            int cost = name switch
+            {
+                "High" => 100,
+                "Medium" => 50,
+                "Low" => 20,
+                _ => 0
+            };
+
+            Debug.Log("Объект: " + name + ", Стоимость: " + cost);
+            totalCost += cost;
+        }
+
+        Debug.Log("Общая суммарная стоимость: " + totalCost);
+    }
+}
