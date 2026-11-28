@@ -1,0 +1,15 @@
+using UnityEngine;
+
+ public class Task1_SpawnMarkers : MonoBehaviour
+    {
+        public GameObject markerPrefab;
+
+        void Start()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                float x = i * 1.5f;
+                Instantiate(markerPrefab, new Vector3(x, 5f, 0f), Quaternion.identity);
+            }
+        }
+    }
