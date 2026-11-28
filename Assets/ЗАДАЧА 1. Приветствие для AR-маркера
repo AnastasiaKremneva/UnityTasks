@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class Task1_ShowHint : MonoBehaviour
+{
+    void Start()
+    {
+        ShowHint();
+        ShowHint();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ShowHint();
+        }
+    }
+
+    void ShowHint()
+    {
+        Debug.Log("Point the camera at the marker");
+    }
+}
