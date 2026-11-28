@@ -1,0 +1,13 @@
+using UnityEngine;
+
+public class Task5_CoinFall : MonoBehaviour
+{
+    void FixedUpdate()
+    {
+        if (transform.position.y < -2)
+        {
+            Debug.Log("Destroyed: " + gameObject.name);
+            Destroy(gameObject);
+        }
+    }
+}
